@@ -1,0 +1,30 @@
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/videoplayer.css" />
+  <link rel="stylesheet" href="css/tailwind.css">
+  <link rel="icon" type="image/x-icon" href="src/img/favicon.ico">
+  <title>pleer</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vidstack/styles/defaults.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vidstack/styles/community-skin/video.min.css" />
+  <script type="module" src="https://cdn.jsdelivr.net/npm/vidstack/dist/cdn/prod.js"></script>
+</head>
+
+<body>
+  <div class="videoplayer1">
+    <media-player title="Клинок, рассекающий демонов: Деревня кузнецов - 2" src="src/video/krd/2/hls/krd1080.m3u8"
+      poster="src/video/krd/2/poster.jpg" thumbnails="src/video/krd/2/media/time.vtt" aspect-ratio="16/9" crossorigin>
+      <media-outlet>
+        <media-poster alt="KRD 2 episode"></media-poster>
+        <track src="src/video/krd/2/media/subs/subs.vtt" label="Русский" srclang="ru-RU" kind="subtitles" default />
+        <track src="src/video/krd/2/chapters.vtt" srclang="en-US" kind="chapters" default />
+      </media-outlet>
+      <media-community-skin></media-community-skin>
+    </media-player>
+  </div>
+</body>
+
+</html>

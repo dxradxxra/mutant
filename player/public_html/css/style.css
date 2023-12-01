@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
+body{
+    background-color: #1e1e1e;
+    margin: 0;
+}
+.player{
+    margin: 50px auto;
+    width: 800px;
+}
+.player-1{
+  width: 100%;
+  height: 100%;
+}
+media-player[data-can-play]:not([data-user-idle]) .can-control\:opacity-100{
+    opacity: 1;
+}
+
+.media-buffering-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    /* prevent blocking lower elements (e.g., gestures). */
+    pointer-events: none;
+    /** place above poster (optional). */
+    z-index: 1;
+  }
+  
+  .media-buffering-icon {
+    width: 84px;
+    height: 84px;
+    color: white;
+    opacity: 0;
+    transition: opacity 200ms ease;
+  }
+  
+  .media-buffering-track {
+    opacity: 0.25;
+  }
+  
+  .media-buffering-track-fill {
+    opacity: 0.75;
+    stroke-dasharray: 100;
+    stroke-dashoffset: 50;
+  }
+  
+  /* Show buffering indicator while media is not ready, or buffering. */
+  media-player:not([data-can-play]) .media-buffering-icon,
+  media-player[data-waiting] .media-buffering-icon {
+    opacity: 1;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+.skip-op{
+  height: 48px;
+  width: 48px;
+  cursor: pointer;
+}
+#skip-op{
+  display: none;
+}
+.hidden {
+  display: none;
+}
+
+media-gesture[action='toggle:paused'],
+media-gesture[action='toggle:fullscreen'] {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+media-gesture[action='seek:-10'] {
+  top: 0;
+  left: 0;
+  width: 25%;
+  height: 100%;
+  z-index: 1;
+}
+
+media-gesture[action='seek:10'] {
+  top: 0;
+  right: 0;
+  width: 25%;
+  height: 100%;
+  z-index: 1;
+}

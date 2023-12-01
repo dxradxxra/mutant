@@ -1,0 +1,79 @@
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/tailwind.css">
+    <link rel="icon" type="image/x-icon" href="src/img/favicon.ico">
+    <title>aanimefun</title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/vidstack/dist/cdn/prod.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vidstack/styles/defaults.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/0.8.2/hls.min.js"></script>
+</head>
+<body>
+  <div class="player-1">
+        <media-player
+        poster="src/video/krd/2/poster.jpg"
+        aspect-ratio="16/9"
+        id="vidplayer"
+        >
+            <media-outlet>
+                <source src="src/video/krd/2/krd1080.mp4" type="video/mp4">
+            </media-outlet>
+            <div class="media-buffering-container">
+                <svg class="media-buffering-icon" fill="none" viewBox="0 0 120 120" aria-hidden="true">
+                  <circle class="media-buffering-track" cx="60" cy="60" r="54" stroke="currentColor" stroke-width="8"></circle>
+                  <circle class="media-buffering-track-fill" cx="60" cy="60" r="54" stroke="currentColor" stroke-width="10" pathLength="100"></circle>
+                </svg>
+              </div>
+              <media-caption></media-caption>
+            <div class="controlsplayer flex justify-between flex-col z-10 inset-0 w-full items-center h-full absolute" id="contorlsplayer">
+                <div class="flex-1 border-box"></div>
+                <div class="flex-2 flex w-full items-center -mb-2 px-4 z-10 pointer-events-auto border-box">
+                    <media-time type="current" class="white text-sm tracking-wide mr-1"></media-time>
+                    <media-time-slider class="videoslider flex">
+                        <media-slider-value type="pointer" format="time" slot="preview" />
+                    </media-time-slider>
+                    <media-time type="duration" class="white text-sm tracking-wide ml-1"></media-time>
+                </div>
+                <div class="flex items-center pointer-events-auto w-full mb-1 px-0.5 z20 border-box">
+                    <media-play-button></media-play-button>
+                    <div class="skip-op" id="skip-op">
+                        <img src="src/skip-op.svg" alt="" onclick="jumpToTime()">
+                    </div>
+                    <media-mute-button></media-mute-button>
+                    <media-volume-slider class="max-w-[64px] -ml-1.5">
+                        <media-slider-value type="pointer" format="percent" slot="preview" />
+                    </media-volume-slider>
+                    <div class="flex-1 white1 text-center">Ёриичи Зэрошики</div>
+
+                    <media-menu>
+                        <media-menu-button aria-label="Settings">
+                            <media-icon type="settings" data-rotate></media-icon>
+                        </media-menu-button>
+                        <media-menu-items>
+                            <media-menu>
+                                <media-playback-rate-menu-button label="Speed"></media-playback-rate-menu-button>
+                                <media-playback-rate-menu-items normal-label="Normal"></media-playback-rate-menu-items>
+                            </media-menu>
+                            <media-menu>
+                                <media-audio-menu-button label="Audio"></media-audio-menu-button>
+                                <media-audio-menu-items empty-label="Default"></media-audio-menu-items>
+                            </media-menu>
+                            <media-menu>
+                                <media-quality-menu-button label="Quality"></media-quality-menu-button>
+                                <media-quality-menu-items auto-label="Auto"></media-quality-menu-items>
+                            </media-menu>
+                        </media-menu-items>
+                    </media-menu>
+                    <media-fullscreen-button class="right-2"></media-fullscreen-button>
+        </div>
+      </div>
+    </media-player>
+  </div>
+  <script src="js/timesave.js"></script>
+  <script src="js/skipop.js"></script>
+  <script src="js/controls.js"></script>
+</body>
+</html>
